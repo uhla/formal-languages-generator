@@ -1,0 +1,192 @@
+Multithread consumer/producer with 3 threads
+
+Comparison example/consumer queue with multithread generating against publish method in single thread swingworker
+Everytime with same settings of the generator
+
+jak si lze povsimnout, pri nizsich poctech prikladu jsou casy vicemene stejne, kvuli rezii na vytvoreni vlakna, pri vyssich poctech je vsak generovani rychlejsi
+dalsi vyhodou tohoto pristupu (queue) je mensi nachylnost na zaseknuti se na jednom prikladu, pokud by se tak nahodou stalo u jednoho z vlaken, porad jsou vygenerovany 2/3 prikladu 
+
+T0Generator  union
+--------------------
+Sample - 1000 examples - each time clear and generate
+Multithread consumer/producer with 3 threads
+First run
+Runtime: 3240ms
+Second and next run
+Runtime: 1135ms
+Runtime: 1148ms
+Runtime: 1091ms
+
+
+moduleToCore
+First run
+Runtime: 4296ms
+Second and next run
+Runtime: 2702ms
+Runtime: 2502ms
+Runtime: 2189ms
+
+---------------------
+Sample - 100 examples - each time clear and generate
+Multithread consumer/producer
+First run
+Runtime: 972ms
+Second and next run
+Runtime: 363ms
+Runtime: 334ms
+Runtime: 202ms
+
+moduleToCore
+First run
+Runtime: 1216ms
+Second and next run
+Runtime: 524ms
+Runtime: 420ms
+Runtime: 331ms
+
+---------------------
+Sample - 10 examples - each time clear and generate
+Multithread consumer/producer
+First run
+Runtime: 286ms
+Second and next run
+Runtime: 133ms
+Runtime: 122ms
+Runtime: 75ms
+
+moduleToCore
+First run
+Runtime: 394ms
+Second and next run
+Runtime: 146ms
+Runtime: 102ms
+Runtime: 105ms
+
+---------------------------------------------
+T1Generator NFAEps to DFA         (states 1,2 output)
+MultiThread consumer/producer
+
+1000
+Runtime: 3231ms
+Runtime: 1279ms
+Runtime: 1452ms
+Runtime: 1276ms
+
+100
+Runtime: 1270ms
+Runtime: 265ms
+Runtime: 234ms
+Runtime: 219ms
+
+10
+Runtime: 317ms
+Runtime: 187ms
+Runtime: 69ms
+Runtime: 92ms
+
+
+ModuleToCore
+
+1000
+Runtime: 4302ms
+Runtime: 2296ms
+Runtime: 2757ms
+Runtime: 1915ms
+
+100
+Runtime: 1407ms
+Runtime: 321ms
+Runtime: 318ms
+Runtime: 294ms
+
+10
+Runtime: 344ms
+Runtime: 160ms
+Runtime: 105ms
+Runtime: 99ms
+
+-----------------------------------
+t2 generator               reg -> NFA
+
+MultiThread consumer/producer
+1000
+Runtime: 3373ms
+Runtime: 1142ms
+Runtime: 1010ms
+Runtime: 1250ms
+
+100
+Runtime: 877ms
+Runtime: 308ms
+Runtime: 212ms
+Runtime: 206ms
+
+10
+Runtime: 249ms
+Runtime: 210ms
+Runtime: 148ms
+Runtime: 108ms
+  
+ModuleToCore
+1000
+Runtime: 4132ms
+Runtime: 1808ms
+Runtime: 1489ms
+Runtime: 1765ms
+
+100
+Runtime: 1059ms
+Runtime: 364ms
+Runtime: 385ms
+Runtime: 283ms
+
+10
+Runtime: 329ms
+Runtime: 132ms
+Runtime: 185ms
+Runtime: 110ms
+
+-----------------------------------
+t3 generator               DFA -> RE
+
+MultiThread consumer/producer
+
+1000
+Runtime: 2050ms
+Runtime: 543ms
+Runtime: 574ms
+Runtime: 457ms
+
+100
+Runtime: 550ms
+Runtime: 286ms
+Runtime: 125ms
+Runtime: 157ms
+
+10
+Runtime: 177ms
+Runtime: 112ms
+Runtime: 93ms
+Runtime: 98ms
+
+ModuleToCore
+1000
+Runtime: 2703ms
+Runtime: 976ms
+Runtime: 822ms
+Runtime: 818ms
+
+100
+Runtime: 690ms
+Runtime: 280ms
+Runtime: 159ms
+Runtime: 161ms
+
+10
+Runtime: 170ms
+Runtime: 141ms
+Runtime: 121ms
+Runtime: 102ms
+
+
+
