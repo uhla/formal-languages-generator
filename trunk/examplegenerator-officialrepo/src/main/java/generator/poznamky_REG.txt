@@ -1,0 +1,76 @@
+Generuje to divny priklady. 
+Napriklad NFA s epsilon-krokama delaji epsilon cykly,
+ktery jsou na nic. 
+
+DONE: epsilon cykly
+EFA: vylepsene - ale obcas cykli (uz ne)
+TODO pridat validaci na max transitions vs min states
+
+
+      |   a    |   b    |   ε    | 
+----------------------------------
+ <->Y |   {}   |   {}   |   {}   | 
+    Z | {Y, Z} |  {Y}   |  {Y}   | 
+----------------------------------
+
+DONE: Reseni odstraneni epsilon-kroku by mohlo vypisovat i mnoziny D_epsilon.
+
+
+Nelze urcit, jak velke maji byt tridy ekvivalence pri minimalizaci 
+(obvykle se vytvori jedna vetsi trida a ostatni jsou jednoprvkove).
+ 
+
+Pri generovani prikladu zalezi na poctu koncovych stavu (cim vic koncovych,
+tim je generovani nesmyslne pomalejsi - tyka se mozna jen nekterych uloh, 
+jako treba minimalizace). - pokud je zaskrtnuta totalni prechod funkce
+
+
+Vyzaduje se nekdy min i max - treba pri minimalizaci u parametru steps 
+(proc nelze zadat pouze jedno z toho?)
+
+NOT REPRODUCIBLE: Kdyz se generuje priklad na minimalizaci a na vstupu jsou i nedosazitelny 
+stavy, blbne test na pocet prechodu vstupniho automatu.
+
+DONE: Kdyz clovek zada "totalni prechodova funkce", nema to po nem uz chcit pocet
+prechodu.
+
+DONE:reg gram -> NFA - uplne nesmyslne priklady
+protoze vygeneruje automat a z nej teprve gramatiku!!
+
+hlavne jsou priklady stejne!
+Zda se, ze generovani prikladu na prevod RE->EFA nefunguje: generuje 
+to jen regularni vyrazy ve tvaru, ktery leze z prekladu DFA->RE. 
+
+
+Pri prevodu DFA->RE by melo jit zadat, kolik ma byt v automatu loopu.
+
+Chtelo by to taky mit moznost omezit pocet epsilonu a prazdnych mnozin 
+v regularnich vyrazech, ktere sluzba generuje (pro prevod na EFA). 
+
+minimal dfa prevod nebere v uvahu parametry omezeni!
+
+3krokova minimalizace - vic nez tri kroky - vetsinou se zacykli
+
+!! veme totalne random cisla a random splaca dohromady automat... bleh
+
+DONE: totalni prechodova funkce byla prevazne resena na urovni vyjimek, nikoliv zpracovanim v kodu!
+
+-----------
+V ´ cˇasti ´
+venovan ˇ e pohledu u ´ zivatele chyb ˇ ´ı zm´ınka o tom, ze zadan ˇ e po ´ zadavky na ˇ
+generovane p ´ rˇ´ıklady nemus´ı byt splniteln ´ e,´ ze se sice pou ˇ zˇ´ıvaj´ı zakladn ´ ´ı
+heuristiky pro detekci nesplnitelnosti, ale ze nefunguj ˇ ´ı vzdy, jak se takov ˇ a´
+situace pozna a jak se ´ reˇ sˇ´ı (tato problematika je pouze cˇaste ´ cnˇ e zm ˇ ´ınena ˇ
+v cˇasti 4.3.1). V pr ´ aci bych uv ´ ´ıtal i v´ıce informac´ı o propojen´ı generatoru ´
+a sluzby pro vyhodnocov ˇ an´ ´ı odpovedn ˇ ´ıkovych ot ´ azek. V ´ cˇasti popisuj ´ ´ıc´ı
+implementaci bych ocek ˇ aval alespo ´ n stru ˇ cnˇ y popis algoritmu generov ´ an´ ´ı
+prˇ´ıkladu vyhovuj ˚ ´ıc´ıch pozadavk ˇ um.
+
+-------------
+
+vykreslovani automatu do grafu -> mozne rozsireni
+--------------
+
+TODO::: imho je zbytecne specifikovat pocet nedosazitelnych stavu... automaticky by v zavislosti na celkovem poctu stavu melo byt vzano 0-2 stavy - TODO konzultovat se strejdou
+
+DONE: odebrany nazvy stavu neodpovidajici konvenci (a,b,c... x,y,z)

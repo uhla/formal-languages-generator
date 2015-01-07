@@ -1,0 +1,4 @@
+REG: 
+24.5 fixed bug with hanging during reg -> nfa (and viceversa) - can be reproduced via large amount of examples to generate
+
+CFG
